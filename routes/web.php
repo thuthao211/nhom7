@@ -7,5 +7,5 @@ Route::get('/', function () {
 });
 
 Route::get('/thuthao', function () {
-    return 'Thuthao211';
+    return view('ten');
 });
