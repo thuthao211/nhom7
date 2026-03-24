@@ -12,3 +12,4 @@ Route::get('/thuthao', function () {
 Route::get('/bh',function(){
     return view('bh');
 });
+Route::get('/chitietsach/{id}', 'App\Http\Controllers\SachController@chitietsach');
