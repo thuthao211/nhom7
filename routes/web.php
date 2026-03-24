@@ -16,4 +16,11 @@ Route::get('/index','App\Http\Controllers\ViduController@sach');
 Route::get('/bh',function(){
     return view('bh');
 });
+<<<<<<< HEAD
 >>>>>>> 0f80d4c7d0879cbff7095308f1c6f0401b784f55
+=======
+
+Route::get('/layout_sach', function () {
+    return view('components.layout_sach'); 
+});
+>>>>>>> remotes/origin/nhuthao
