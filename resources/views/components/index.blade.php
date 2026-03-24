@@ -1,4 +1,4 @@
-@extends("components.sach_layout")
+@extends("components.layout_sach")
 
 @section("title","Sách")
 

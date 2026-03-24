@@ -12,11 +12,11 @@ class ViduController extends Controller
      public function sach()
     {
     $data = DB::select("select * from sach order by gia_ban asc limit 0,8");
-    return view("index", compact("data"));
+    return view("components.index", compact("data"));
     }
     function theloai($id)
     {
     $data = DB::select("select * from sach where the_loai = ?",[$id]);
-    return view("index", compact("data"));
+    return view("components.index", compact("data"));
     }
 }
