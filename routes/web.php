@@ -16,3 +16,4 @@ Route::get('/bh',function(){
 });
 
 Route::get('/chitietsach/{id}', 'App\Http\Controllers\SachController@chitietsach');
+Route::get('/sach/theloai/{id}', 'App\Http\Controllers\ViduController@theloai');
