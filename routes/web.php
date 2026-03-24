@@ -9,3 +9,5 @@ Route::get('/', function () {
 Route::get('/thuthao', function () {
     return view('ten');
 });
+
+Route::get('/index','App\Http\Controllers\ViduController@sach');
