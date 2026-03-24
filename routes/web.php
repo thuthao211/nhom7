@@ -12,3 +12,7 @@ Route::get('/thuthao', function () {
 Route::get('/bh',function(){
     return view('bh');
 });
+
+Route::get('/layout_sach', function () {
+    return view('components.layout_sach'); 
+});
