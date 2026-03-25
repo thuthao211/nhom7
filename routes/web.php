@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Trang chủ hiện tất cả sách
+
 Route::get('/index', [ViDuLayoutController::class, 'sach']);
 
 // Trang lọc theo thể loại
