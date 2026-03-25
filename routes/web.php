@@ -1,11 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ViduLayoutController;
+use App\Http\Controllers\ViDuLayoutController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/trang1', [ViduLayoutController::class, 'trang1']);
-Route::get('/sach', [ViduLayoutController::class, 'sach']);
+// Trang chủ hiện tất cả sách
+Route::get('/index', [ViDuLayoutController::class, 'sach']);
+
+// Trang lọc theo thể loại
+Route::get('/sach/theloai/{id}', [ViDuLayoutController::class, 'theloai']);
