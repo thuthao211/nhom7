@@ -14,13 +14,15 @@ class ViDuLayoutController extends Controller
         return view('vidusach.index', ['data' => $data]);
     }
 
-    // Hiển thị sách theo thể loại
-    public function theloai($id)
-    {
-        // Lấy sách có id_theloai tương ứng
-        $data = DB::table('sach')->where('id_theloai', $id)->get();
-        
-        // Trả về cùng một view index nhưng dữ liệu đã được lọc
-        return view('vidusach.index', ['data' => $data]);
-    }
+ public function theloai($id)
+{
+    // Sửa 'id' thành 'the_loai' (theo đúng tên cột trong ảnh phpMyAdmin bạn gửi)
+    $data = DB::table('sach')->where('the_loai', $id)->get(); 
+    
+    return view('vidusach.index', ['data' => $data]);
+}
+    public function chitiet($id) {
+    $data2 = DB::table('sach')->where('id', $id)->get();
+    return view('vidusach.chitiet', ['data2' => $data2]);
+}
 }

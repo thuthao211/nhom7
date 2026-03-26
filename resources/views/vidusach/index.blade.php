@@ -1,14 +1,20 @@
-@extends("layouts.sach_layout")
-@section("title","Sách")
+@extends("layouts.sach_layout") {{-- Dùng đúng layout bạn vừa gửi --}}
+
 @section("content")
-    <div class='list-book'>
-            @foreach($data as $row)
+<div class='list-book'>
+    @foreach($data as $row)
     <div class='book'>
-        <img src="{{asset('book_image/'.$row->file_anh_bia)}}" width='200px'
-    height='200px'><br>
-        <b>{{$row->tieu_de}}</b><br/>
-        <i>{{number_format($row->gia_ban,0,",",".")}}đ</i>
+        <a href="{{ url('/sach/chitiet/'.$row->id) }}">
+            <img src="{{ asset('book_image/'.$row->file_anh_bia) }}" width="100%">
+        </a>
+
+        <div class="mt-2">
+            <a href="{{ url('/sach/chitiet/'.$row->id) }}" style="color:black; text-decoration:none;">
+                <b>{{ $row->tieu_de }}</b>
+            </a>
+            <p style="color:red">{{ number_format($row->gia_ban, 0, ',', '.') }}đ</p>
+        </div>
     </div>
-    @endforeach
-    </div>
+@endforeach
+</div>
 @endsection
