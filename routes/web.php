@@ -1,15 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ViDuLayoutController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/index', [ViDuLayoutController::class, 'sach']);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-// Trang lọc theo thể loại
-Route::get('/sach/theloai/{id}', [ViDuLayoutController::class, 'theloai']);
-Route::get('/sach/chitiet/{id}', [ViDuLayoutController::class, 'chitiet']);
+require __DIR__.'/auth.php';
