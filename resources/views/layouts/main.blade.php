@@ -13,15 +13,10 @@
             @yield('content')
     </main>
     <footer>
-        <div <a href="{{ url('/sach/chitiet/'.$row->id) }}">
-            <img src="{{ asset('book_image/'.$row->file_anh_bia) }}">
-        </a>
-        
-        <div class="mt-2">
-            <a href="{{ url('/sach/chitiet/'.$row->id) }}" style="color: black; text-decoration: none;">
-                <b>{{ $row->tieu_de }}</b>
-            </a>
-            <p style="color:red">{{ number_format($row->gia_ban, 0, ',', '.') }}đ</p></div>
+        <div class='row' style='text-align:center'>
+            <div class='col-4'>TRỤ SỞ</div>
+            <div class='col-4'>THÔNG TIN CHUNG</div>
+            <div class='col-4'>BẢN ĐỒ</div>
         </div>
     </footer>
     </body>

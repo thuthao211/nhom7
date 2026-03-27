@@ -16,7 +16,7 @@ class ViDuLayoutController extends Controller
 
  public function theloai($id)
 {
-    // Sửa 'id' thành 'the_loai' (theo đúng tên cột trong ảnh phpMyAdmin bạn gửi)
+  
     $data = DB::table('sach')->where('the_loai', $id)->get(); 
     
     return view('vidusach.index', ['data' => $data]);
